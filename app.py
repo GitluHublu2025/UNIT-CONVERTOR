@@ -1,3 +1,4 @@
+
 import streamlit as st
 from converter import convert
 
@@ -9,7 +10,7 @@ to_unit = st.text_input("Enter Required UOM (e.g., m, Pa, m3, C, F, K)")
 
 if st.button("Convert"):
     try:
-        result = convert(value, from_unit.strip(), to_unit.strip())
+        result = convert(value, from_unit, to_unit)
         st.success(f"{value} {from_unit} = {result:.6g} {to_unit}")
     except Exception as e:
         st.error(str(e))
